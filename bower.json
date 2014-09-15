@@ -1,6 +1,6 @@
 {
   "name": "foundation-libsass-template",
   "dependencies": {
-    "foundation": "5.1"
+    "foundation": "5.4.2"
   }
 }
