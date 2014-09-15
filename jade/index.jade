@@ -1,0 +1,53 @@
+doctype html
+html(class="no-js" lang="en")
+
+  head
+    meta(charset="utf-8")
+    <!-- if you remove this meta tag, the NSA will spy on you through your Xbox Kinect camera -->
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Throwbacks
+    link(href='http://fonts.googleapis.com/css?family=Playfair+Display|Fauna+One|Vast+Shadow' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" href="css/app.css")  
+    script(src="bower_components/modernizr/modernizr.js")
+    script(src="https://apis.google.com/js/client.js?onload=load")
+
+
+  body
+
+    <!-- body content here -->
+    //- .row.collapse
+    //-   .small-12.columns
+    //-     div(data-magellan-expedition="fixed").fixed
+    //-       dl.sub-nav
+    //-         dd(data-magellan-arrival="intro"): a(onClick="return false;",href="#intro") Intro
+    //-         dd(data-magellan-arrival="about"): a(href="#about") About
+    //-         dd(data-magellan-arrival="menu"): a(href="#menu") Menu
+    //-         dd(data-magellan-arrival="calendar"): a(href="#calendar") Calendar
+    //-         dd(data-magellan-arrival="map"): a(href="#map") Map
+      
+
+    .row#intro(data-magellan-destination="intro")
+      .small-12.columns
+        h3 Intro
+
+    .row#about(data-magellan-destination="about")
+      .small-12.columns
+        h3 About
+
+    .row#menu(data-magellan-destination="menu")
+      .small-12.columns
+        h3 Menu
+
+    .row#calendar(data-magellan-destination="calendar")
+      .small-12.columns
+        h3 Cal
+        
+    .row#map(data-magellan-destination="map")
+      .small-12.columns
+        h3 Map        
+
+    script(src="bower_components/jquery/dist/jquery.min.js")
+    script(src="bower_components/foundation/js/foundation.min.js")
+    script(src="js/app.js")
+
+

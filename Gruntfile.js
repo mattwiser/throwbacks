@@ -22,13 +22,43 @@ module.exports = function(grunt) {
       sass: {
         files: 'scss/**/*.scss',
         tasks: ['sass']
+      },
+      jade:{
+        files: './jade/*',
+        tasks: ['jade']
+      }
+    },
+
+    jade: {
+      compile: {
+        options: {
+          pretty:true,
+          data: {
+            debug: false
+          }
+        },
+        files: {
+          "./index.html": ["./jade/index.jade"]
+        }
+      }
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: './'
       }
     }
+  }
+
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
-  grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('build', ['sass', 'jade']);
+  grunt.registerTask('default', ['build','connect','watch']);
 }
