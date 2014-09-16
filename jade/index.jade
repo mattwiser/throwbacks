@@ -13,38 +13,55 @@ html(class="no-js" lang="en")
 
 
   body
+    .fixed
+      nav.top-bar(data-topbar)
+        ul.title-area
+          li.name
+            h1: a#navTitle(href="./") Throwbacks
+          li.toggle-topbar.menu-icon
+            a(href="#") 
+              span
+                | Menu
+        section.top-bar-section
+          <!--Right Nav Section-->
+          ul.left
+            li.divider
+            li
+              a.navLink#introLink(href="#") Intro
+            li.divider
+            li
+              a.navLink#aboutLink(href="#") About
+            li.divider
+            li
+              a.navLink#menuLink(href="#") Menu
+            li.divider
+            li
+              a.navLink#calendarLink(href="#") Calendar
+            li.divider
+            li
+              a.navLink#mapLink(href="#") Map
+            li.divider
 
-    <!-- body content here -->
-    //- .row.collapse
-    //-   .small-12.columns
-    //-     div(data-magellan-expedition="fixed").fixed
-    //-       dl.sub-nav
-    //-         dd(data-magellan-arrival="intro"): a(onClick="return false;",href="#intro") Intro
-    //-         dd(data-magellan-arrival="about"): a(href="#about") About
-    //-         dd(data-magellan-arrival="menu"): a(href="#menu") Menu
-    //-         dd(data-magellan-arrival="calendar"): a(href="#calendar") Calendar
-    //-         dd(data-magellan-arrival="map"): a(href="#map") Map
-      
-
-    .row#intro(data-magellan-destination="intro")
+    .row.fullWidth#intro
       .small-12.columns
-        h3 Intro
+        #logoContainer
+          img(src="./img/BannerLogo.png")#mainLogo
 
-    .row#about(data-magellan-destination="about")
+    .row.fullWidth#about
       .small-12.columns
-        h3 About
+        h1 About
 
-    .row#menu(data-magellan-destination="menu")
+    .row.fullWidth#menu
       .small-12.columns
-        h3 Menu
+        h1 Menu
 
-    .row#calendar(data-magellan-destination="calendar")
+    .row.fullWidth#calendar
       .small-12.columns
-        h3 Cal
+        h1 Calendar
         
-    .row#map(data-magellan-destination="map")
+    .row.fullWidth#map
       .small-12.columns
-        h3 Map        
+        h1 Map      
 
     script(src="bower_components/jquery/dist/jquery.min.js")
     script(src="bower_components/foundation/js/foundation.min.js")

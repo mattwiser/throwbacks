@@ -1,23 +1,38 @@
+@import "normalize";
 @import "settings";
 @import "foundation";
 
+.fullWidth{
+	width: 100%;
+	margin: 0 auto;
+	max-width: initial;
+}
+
 #about, #map, #intro, #menu, #calendar {
 	
-height: 100vh;
-  /*
-
-  /* fix background */
-  background-attachment: fixed;
-
-  /* center it */
-  background-position: center center;
-
-  /* Scale it nicely to the element */
-  background-size: cover;
-
+	height: 100vh;
+	/* fix background */
+	background-attachment: fixed;
+	/* center it */
+	background-position: center center;
+	/* Scale it nicely to the element  */
+	background-size: cover;
 }
+
 #intro{
-	background-image:url(../img/test-banner.jpg);
+	background-image:url(../img/Banner1.jpg);
+
+	#logoContainer{
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20%;
+		margin-bottom: 0%;
+		#mainLogo{
+			width: 100%;
+			height: auto;
+		}
+	}
 }
 
 #about{
@@ -27,7 +42,7 @@ height: 100vh;
 #menu{
 	background-color: #3E606F;
 }
-
+ 
 #calendar{
 	background-color: #D1DBBD;
 }
@@ -36,16 +51,20 @@ height: 100vh;
 	background-color: #3E606F;
 }
 
-h3{
+#nav{
+	background-color: #EB7F00;
+	#navBar{
+		li{
+			display: inline;
+			font-size: 200%;
+			padding-left: 5%;
+		}
+	}	
+}
+
+
+h1{
 	font-family: 'Vast Shadow', cursive;
 	color: #91AA9D;
 	display: inline-block;
-}
-
-.sub-nav{
-	text-align: center;
-	dl{
-		text-align: center;
-		display: inline;
-	}
 }

@@ -9,30 +9,55 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=load"></script>
   </head>
-  <body><!-- body content here -->
-    <div id="intro" data-magellan-destination="intro" class="row">
+  <body>
+    <div class="fixed">
+      <nav data-topbar class="top-bar">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a id="navTitle" href="./">Throwbacks</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section"><!--Right Nav Section-->
+          <ul class="left">
+            <li class="divider"></li>
+            <li><a id="introLink" href="#" class="navLink">Intro</a></li>
+            <li class="divider"></li>
+            <li><a id="aboutLink" href="#" class="navLink">About</a></li>
+            <li class="divider"></li>
+            <li><a id="menuLink" href="#" class="navLink">Menu</a></li>
+            <li class="divider"></li>
+            <li><a id="calendarLink" href="#" class="navLink">Calendar</a></li>
+            <li class="divider"></li>
+            <li><a id="mapLink" href="#" class="navLink">Map</a></li>
+            <li class="divider"></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <div id="intro" class="row fullWidth">
       <div class="small-12 columns">
-        <h3>Intro</h3>
+        <div id="logoContainer"><img src="./img/BannerLogo.png" id="mainLogo"></div>
       </div>
     </div>
-    <div id="about" data-magellan-destination="about" class="row">
+    <div id="about" class="row fullWidth">
       <div class="small-12 columns">
-        <h3>About</h3>
+        <h1>About</h1>
       </div>
     </div>
-    <div id="menu" data-magellan-destination="menu" class="row">
+    <div id="menu" class="row fullWidth">
       <div class="small-12 columns">
-        <h3>Menu</h3>
+        <h1>Menu</h1>
       </div>
     </div>
-    <div id="calendar" data-magellan-destination="calendar" class="row">
+    <div id="calendar" class="row fullWidth">
       <div class="small-12 columns">
-        <h3>Cal</h3>
+        <h1>Calendar</h1>
       </div>
     </div>
-    <div id="map" data-magellan-destination="map" class="row">
+    <div id="map" class="row fullWidth">
       <div class="small-12 columns">
-        <h3>Map        </h3>
+        <h1>Map      </h1>
       </div>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
