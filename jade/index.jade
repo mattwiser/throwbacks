@@ -17,14 +17,13 @@ html(class="no-js" lang="en")
       nav.top-bar(data-topbar)
         ul.title-area
           li.name
-            h1: a#navTitle(href="./") Throwbacks
+            
           li.toggle-topbar.menu-icon
             a(href="#") 
               span
-                | Menu
+      
         section.top-bar-section
-          <!--Right Nav Section-->
-          ul.left
+          ul.right
             li.divider
             li
               a.navLink#introLink(href="#") Intro
@@ -45,23 +44,177 @@ html(class="no-js" lang="en")
     .row.fullWidth#intro
       .small-12.columns
         #logoContainer
-          img(src="./img/BannerLogo.png")#mainLogo
+          img#mainLogo(src="./img/BannerLogo.png")
 
     .row.fullWidth#about
       .small-12.columns
-        h1 About
+        img.sectionHeader(src="./img/About.png")
+        p
+          | I came back to Nashville in early 2009 to take care of my father, who was ill. I had recently sold a financial services business in Chicago and was able to do this whereas my two older sisters had busy working lives and were not.
+        p
+          | After about three months in Nashville, I decided “why not stay here?” I had lived here in the 80’s, hada great group of friends that I had kept in touch with over the years, and Nashville had grown up into a truly vibrant, cultural city.
+        p
+          | I decided to focus on a long-held dream of owning a bar and grill. I had paid my dues in my teens and twenties in all aspects of the hospitality business, both in Nashville and Chicago, so it wasn’t like I was going in cold.
+        p
+          | As fate would have it, I wandered in to The Bellevue Pub in late 2009. I learned from several regulars there that this place had once been a great neighborhood gathering place going back 25 years, but over the last 6 years had gone severely downhill due primarily to absentee ownership. They longed to have it back!
+        p
+          | After four years of unsuccessfully trying to negotiate with two failing owners, the bar finally closed in November of 2013, and I immediately stepped in. Ironically, I had also met the love of my life, Angie, at The Bellevue Pub in October 2009. She was bartending there to make ends meet as a realtor during that terrible time in the market. We have been together ever since, and have pursued this dream together.
+        p
+          | Our goal was to completely revitalize the once-great Bellevue Pub and bring it back to the community.We realized that it had developed a very negative stigma over recent years, so the decision was made to shut it down, completely remodel it, and re-open it under a new name. We both love the school “vibe” and wanted to bring this type of music together with great food and a clean, crisp, female-friendly atmosphere. After much deliberating, Angie hit on a name that rang true to both of us immediately. Throwbacks Bar & Grill was born!
+        p
+          | We hope you visit us soon and regularly to meet our friendly staff, enjoy great food & drink, live music on our full stage, karaoke, our old-school shuffleboard table, real dart boards, our daily specials, and more!!
 
     .row.fullWidth#menu
       .small-12.columns
-        h1 Menu
+        img.sectionHeader(src="./img/Menu.png")
+        .row
+          .small-12.medium-6.large-4.large-offset-2.columns
+            #appetizers
+              h3 Appetizers
+              
+              .menu-entry
+                h4.title Buffalo Chicken Wings (8)
+                p.description With ranch dressing on the side
+                p.price $6.00
+
+              .menu-entry
+                h4.title Fried Mushroom Basket
+                p.description Traditional style with medium heat
+                p.price $7.00
+              
+              .menu-entry 
+                h4.title Sausage & Cheese Plate
+                p.description Smoked Polish, cheddar, swiss and pepperjack with saltines
+                p.price $7.00
+
+              .menu-entry
+                h4.title Fried Pickle Chips
+                p.description With ranch dressing on the side
+                p.price $6.00
+
+              .menu-entry
+                h4.title Basket of Onion Rings
+                p.description Crisp and hot rendition of an old favorite
+                p.price $5.00
+
+              .menu-entry
+                h4.title Chicken Tenders (3)
+                p.description Choice of rangch, bbq or honey mustard - buffalo style add $1
+                p.price $6.00
+
+              .menu-entry
+                h4.title Quesadilla
+                p.description With picante, sour cream & jalapenos on the side - add chicken, peppers & onions $2
+                p.price $4.00
+
+              .menu-entry
+                h4.title Basket of Fries
+                p.description The perfect touch of retro crisp
+                p.price $4.00
+
+              .menu-entry
+                h4.title Fried Mozzarella Sticks (6)
+                p.description Served with our zesty marinara sauce
+                p.price $6.00                                                                                               
+            
+            #salads
+              h3 Salads
+
+              .menu-entry
+                h4.title Throwbacks Salad
+                p.description Iceberg & romaine, tomato, red onion, ham, egg, bacon bits, cucumber, shredded cheddar
+                p.price $7.50
+              
+              .menu-entry
+                h4.title Ceasar Salad 
+                p.description Classic with romaine, shredded parmesan cheese and croutons
+                p.price $6.00
+              
+              #saladNote
+                p
+                  | Ranch, honey mustard, Italian, Blue Cheese, Caesar
+                p
+                  | Add Fried or Grilled Chicken for $2.00
+
+          .small-12.medium-6.large-4.columns
+            #sandwiches
+              h3 Sandwiches And Stuff
+              
+              .menu-entry
+                h4.title Throwbacks Burger
+                p.description 1/3 lb. Retro goodness with cheddar, american, swiss, pepperjack or provalone $.50
+                p.price $8.00
+
+              .menu-entry
+                h4.title Chicken Salad Wrap
+                p.description Flour or spinach tortilla with lettuce & tomato
+                p.price $8.00
+              
+              .menu-entry
+                h4.title Ahi Tuna Steak Sandwich 
+                p.description Grilled and served on a toasted bun with wasabi mayo, lettuce, tomato & onion
+                p.price $8.00
+
+              .menu-entry
+                h4.title Grilled Cheese
+                p.description Add ham $1. Add tomato & raw onion $.50
+                p.price $4.00
+
+              .menu-entry
+                h4.title Pimento Cheese Sandwich
+                p.description Homemade pimento cheese on toasted bread
+                p.price $5.00
+                
+              .menu-entry
+                h4.title Philly Steak Sandwich
+                p.description Grilled onions & peppers, melted provolone
+                p.price $7.00
+
+              .menu-entry
+                h4.title Bacon Lettuce & Tomato
+                p.description The classic on toasted white bread with mayo on the side
+                p.price $5.00
+
+              .menu-entry
+                h4.title Throw-Backyard Dog
+                p.description Char grilled, 1/4lb. all beef hot dog with choice of relish, chopped or grilled onions and jalapenos
+                p.price $4.00
+
+              .menu-entry
+                h4.title Polish Dog
+                p.description Hearty Polish sausage with choice of relish, chopped or grilled onions and jalapenos
+                p.price $5.00
+
+              .menu-entry
+                h4.title Chicken Tender Wrap
+                p.description Fried tenders with side of honey mustard, lettuce & tomato. Make it Buffalo stlye add $1
+                p.price $6.00
+
+              .menu-entry
+                h4.title Fried Bologna Sandwich 
+                p.description Thick slice on toasted white bread with lettuce, tomato & onion
+                p.price $6.00
+
+              .menu-entry
+                h4.title Grilled Chicken Breast Sandwich
+                p.description On toasted bun with side of honey mustard, lettuce tomato & onion
+                p.price $7.00
+
+          .large-2.hide-for-small.hide-for-medium.columns
 
     .row.fullWidth#calendar
       .small-12.columns
-        h1 Calendar
+        img.sectionHeader(src="./img/Calendar.png")
+      
+
         
     .row.fullWidth#map
       .small-12.columns
-        h1 Map      
+        img.sectionHeader(src="./img/Map.png")
+        .row
+          .small-12.medium-8.medium-centered.columns
+            iframe#googleMap(width="100%", height="400px", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnjbH3hVnKXa8oiBIVQw5ONWs-WY0RBpU&q=142+Belle+Forest+Circle,Nashville+TN")
+             
 
     script(src="bower_components/jquery/dist/jquery.min.js")
     script(src="bower_components/foundation/js/foundation.min.js")
