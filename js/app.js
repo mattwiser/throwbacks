@@ -1,4 +1,4 @@
-$(document).foundation();
+$(document).foundation({topbar: {scrolltop:false}});
 
 $(document).ready(function() {
    getCalendar();
@@ -30,12 +30,10 @@ function getCalendar() {
 
 function htmlAddCalendar(dates){
   for (var i = dates.length - 1; i >= 0; i--) {
-
     // console.log(dates[i].description);
     // console.log(dates[i].summary);
     // console.log(dates[i].start.dateTime);
     // console.log(dates[i].end.dateTime);
-    
   };
 }
 
@@ -44,30 +42,26 @@ function scrollTop(event){
   var targetName = event.currentTarget;
   targetName = $(targetName).attr('id');
   
+
   if (targetName === 'introLink') {
-    $('html, body').animate({
-      scrollTop: $("#intro").offset().top - 45
-    }, 1000);
+    htmlScrollAnimation("#intro");
   }
   if (targetName === 'aboutLink') {
-    $('html, body').animate({
-      scrollTop: $("#about").offset().top - 45
-    }, 1000);
+    htmlScrollAnimation("#about");
   }
   if (targetName === 'menuLink') {
-    $('html, body').animate({
-      scrollTop: $("#menu").offset().top - 45
-    }, 1000);
+    htmlScrollAnimation("#menu");
   }
   if (targetName === 'calendarLink') {
-    $('html, body').animate({
-      scrollTop: $("#calendar").offset().top - 45
-    }, 1000);
+    htmlScrollAnimation("#calendar");
   }      
   if (targetName === 'mapLink') {
-    $('html, body').animate({
-      scrollTop: $("#map").offset().top - 45
-    }, 1000);
+    htmlScrollAnimation("#map");
   }  
 };
   
+function htmlScrollAnimation(section){
+  $('html, body').animate({
+    scrollTop: $(section).offset().top - 45
+  }, 1000);
+}

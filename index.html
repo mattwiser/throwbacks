@@ -4,13 +4,13 @@
     <meta charset="utf-8"><!-- if you remove this meta tag, the NSA will spy on you through your Xbox Kinect camera -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Throwbacks</title>
-    <link href="http://fonts.googleapis.com/css?family=Playfair+Display|Fauna+One|Vast+Shadow" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato|Oswald:700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/app.css">
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=load"></script>
   </head>
   <body>
-    <div class="fixed">
+    <div class="sticky">
       <nav data-topbar class="top-bar">
         <ul class="title-area">
           <li class="name"></li>
@@ -19,15 +19,15 @@
         <section class="top-bar-section">
           <ul class="right">
             <li class="divider"></li>
-            <li><a id="introLink" href="#" class="navLink">Intro</a></li>
+            <li><a id="introLink" href="#" onclick="return false" class="navLink">Intro</a></li>
             <li class="divider"></li>
-            <li><a id="aboutLink" href="#" class="navLink">About</a></li>
+            <li><a id="aboutLink" href="#" onclick="return false" class="navLink">About</a></li>
             <li class="divider"></li>
-            <li><a id="menuLink" href="#" class="navLink">Menu</a></li>
+            <li><a id="menuLink" href="#" onclick="return false" class="navLink">Menu</a></li>
             <li class="divider"></li>
-            <li><a id="calendarLink" href="#" class="navLink">Calendar</a></li>
+            <li><a id="calendarLink" href="#" onclick="return false" class="navLink">Calendar</a></li>
             <li class="divider"></li>
-            <li><a id="mapLink" href="#" class="navLink">Map</a></li>
+            <li><a id="mapLink" href="#" onclick="return false" class="navLink">Map</a></li>
             <li class="divider"></li>
           </ul>
         </section>
@@ -36,17 +36,23 @@
     <div id="intro" class="row fullWidth">
       <div class="small-12 columns">
         <div id="logoContainer"><img id="mainLogo" src="./img/BannerLogo.png"></div>
+        <h5 id="introAddress">142 Belle Forest Circle Nashville TN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+        <h5 id="introPhoneNumber">(615)-997-3735</h5>
       </div>
     </div>
     <div id="about" class="row fullWidth">
       <div class="small-12 columns"><img src="./img/About.png" class="sectionHeader">
-        <p>I came back to Nashville in early 2009 to take care of my father, who was ill. I had recently sold a financial services business in Chicago and was able to do this whereas my two older sisters had busy working lives and were not.</p>
-        <p>After about three months in Nashville, I decided “why not stay here?” I had lived here in the 80’s, hada great group of friends that I had kept in touch with over the years, and Nashville had grown up into a truly vibrant, cultural city.</p>
-        <p>I decided to focus on a long-held dream of owning a bar and grill. I had paid my dues in my teens and twenties in all aspects of the hospitality business, both in Nashville and Chicago, so it wasn’t like I was going in cold.</p>
-        <p>As fate would have it, I wandered in to The Bellevue Pub in late 2009. I learned from several regulars there that this place had once been a great neighborhood gathering place going back 25 years, but over the last 6 years had gone severely downhill due primarily to absentee ownership. They longed to have it back!</p>
-        <p>After four years of unsuccessfully trying to negotiate with two failing owners, the bar finally closed in November of 2013, and I immediately stepped in. Ironically, I had also met the love of my life, Angie, at The Bellevue Pub in October 2009. She was bartending there to make ends meet as a realtor during that terrible time in the market. We have been together ever since, and have pursued this dream together.</p>
-        <p>Our goal was to completely revitalize the once-great Bellevue Pub and bring it back to the community.We realized that it had developed a very negative stigma over recent years, so the decision was made to shut it down, completely remodel it, and re-open it under a new name. We both love the school “vibe” and wanted to bring this type of music together with great food and a clean, crisp, female-friendly atmosphere. After much deliberating, Angie hit on a name that rang true to both of us immediately. Throwbacks Bar & Grill was born!</p>
-        <p>We hope you visit us soon and regularly to meet our friendly staff, enjoy great food & drink, live music on our full stage, karaoke, our old-school shuffleboard table, real dart boards, our daily specials, and more!!</p>
+        <div class="row">
+          <div class="small-12 large-6 columns">
+            <div id="aboutImage1"><img src="http://placehold.it/400x300" class="th"></div>
+            <div id="aboutImage2"><img src="http://placehold.it/400x300" class="th hide-for-small"></div>
+          </div>
+          <div class="small-12 large-6 columns">     
+            <p class="aboutText1">I came back to Nashville in early 2009 to take care of my father, who was ill. I had recently sold a financial services business in Chicago and was able to do this whereas my two older sisters had busy working lives and were not. After about three months in Nashville, I decided “why not stay here?” I had lived here in the 80’s, hada great group of friends that I had kept in touch with over the years, and Nashville had grown up into a truly vibrant, cultural city. I decided to focus on a long-held dream of owning a bar and grill. I had paid my dues in my teens and twenties in all aspects of the hospitality business, both in Nashville and Chicago, so it wasn’t like I was going in cold.            </p>
+            <p class="aboutText2">As fate would have it, I wandered in to The Bellevue Pub in late 2009. I learned from several regulars there that this place had once been a great neighborhood gathering place going back 25 years, but over the last 6 years had gone severely downhill due primarily to absentee ownership. They longed to have it back! After four years of unsuccessfully trying to negotiate with two failing owners, the bar finally closed in November of 2013, and I immediately stepped in. Ironically, I had also met the love of my life, Angie, at The Bellevue Pub in October 2009. She was bartending there to make ends meet as a realtor during that terrible time in the market. We have been together ever since, and have pursued this dream together.</p>
+            <p class="aboutText3">Our goal was to completely revitalize the once-great Bellevue Pub and bring it back to the community. We realized that it had developed a very negative stigma over recent years, so the decision was made to shut it down, completely remodel it, and re-open it under a new name. We both love the school “vibe” and wanted to bring this type of music together with great food and a clean, crisp, female-friendly atmosphere. After much deliberating, Angie hit on a name that rang true to both of us immediately. Throwbacks Bar & Grill was born! We hope you visit us soon and regularly to meet our friendly staff, enjoy great food & drink, live music on our full stage, karaoke, our old-school shuffleboard table, real dart boards, our daily specials, and more!!</p>
+          </div>
+        </div>
       </div>
     </div>
     <div id="menu" class="row fullWidth">

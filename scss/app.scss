@@ -2,53 +2,21 @@
 @import "settings";
 @import "foundation";
 
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	display: inline-block;
+}
+p{
+	font-family: 'Lato', serif;
+}
+
+
 .fullWidth{
 	width: 100%;
 	margin: 0 auto;
 	max-width: initial;
-}
-#about, #map, #menu, #calendar{
-}
-#intro {	
-	min-height: 100%;
-	@media #{$small-only} { 
-		height: 75%;
-	}
-	/* fix background */
-	background-attachment: fixed;
-
-	/* center it */
-	background-position: center center;
-	
-	/* Scale it nicely to the element  */
-	background-size: cover;
-
-}
-
-#intro{
-	background-image:url(../img/Banner1.jpg);
-
-	#logoContainer{
-		width: 68%;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 12%;
-		margin-bottom: 0%;
-		@media #{$small-only} {
-			width: 80%;
-		}
-		#mainLogo{
-			width: 100%;
-			height: auto;
-		}
-	}
-}
-
-.sectionHeader{
-	width: 150px;
-	height: auto;
-	margin-top: 25px;
-	margin-bottom: 15px;
 }
 
 #about{
@@ -67,8 +35,113 @@
 	background-color: #3b3a37;
 }
 
-h1, h2, h3, h5, h6{
-	font-family: 'Vast Shadow', cursive;
-	color: #91AA9D;
-	display: inline-block;
+
+.sectionHeader{
+	width: 150px;
+	height: auto;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+#intro{
+	// @media #{$small-only} {
+	// 	height: 100vh;
+	// }
+	background-image:url(../img/Banner1.jpg);
+	/* fix background */
+	background-attachment: fixed;
+	/* center it */
+	background-position: center center;
+	/* Scale it nicely to the element  */
+	background-size: cover;
+
+	#logoContainer{
+		width: 68%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 12%;
+		margin-bottom: 12%;
+		max-height:452px;
+		max-width: 1348px; 
+		@media #{$small-only} {
+			width: 80%;
+			margin-bottom: 25%;
+		}
+		#mainLogo{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	#introAddress{
+		@media #{$small-only} {
+			margin-top: 45vh;
+		}
+	}
+}
+
+#about{
+
+	#aboutText1{
+
+	}
+	#aboutText2{
+
+	}
+	#aboutText3{
+		@media #{$large-up} {
+			margin-bottom:12px;
+		}
+	}
+	#aboutImage1{
+		display: inline-block;		
+		
+		@media #{$small-only} {
+			width: 100%;
+		}
+
+		@media #{$medium-up} {
+			width: 48%;
+			margin-right: 1%;
+			height: auto;
+		}
+
+		@media #{$large-only} {
+			display: block;
+			width: 90%;
+			margin: 0 auto;
+			margin-bottom: 12px;
+		}
+		
+		img{
+			width: 100%;
+			height: auto;
+		}		
+	}
+	#aboutImage2{
+		display: inline-block;
+		@media #{$medium-up} {
+			width: 48%;
+			height: auto;
+			padding-bottom: 20px !important;
+		}
+
+		@media #{$large-only} {
+			display: block;
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+
+#menu{
+	.title{
+		color: #ead289;
+	}
 }
