@@ -6,10 +6,10 @@ html(class="no-js" lang="en")
     <!-- if you remove this meta tag, the NSA will spy on you through your Xbox Kinect camera -->
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Throwbacks
-    link(href="http://fonts.googleapis.com/css?family=Lato|Oswald:700", rel='stylesheet' type='text/css')
+    //- link(href="http://fonts.googleapis.com/css?family=Lato|Oswald:700", rel='stylesheet' type='text/css')
+    link(rel="icon", type="image/png", href="./img/favicon.ico")
     link(rel="stylesheet" href="css/app.css")  
     script(src="bower_components/modernizr/modernizr.js")
-    script(src="https://apis.google.com/js/client.js?onload=load")
 
 
   body
@@ -24,55 +24,67 @@ html(class="no-js" lang="en")
       
         section.top-bar-section
           ul.right
-            li.divider
             li
-              a.navLink#introLink(href="#", onclick="return false") Intro
-            li.divider
+              a.navLink#introLink(href="#", onclick="return false") Throwbacks
             li
-              a.navLink#aboutLink(href="#", onclick="return false") About
-            li.divider
+              a.navLink#aboutLink(href="#", onclick="return false") Story
             li
-              a.navLink#menuLink(href="#", onclick="return false") Menu
-            li.divider
+              a.navLink#menuLink(href="#", onclick="return false") Eats
             li
-              a.navLink#calendarLink(href="#", onclick="return false") Calendar
-            li.divider
+              a.navLink#calendarLink(href="#", onclick="return false") Dates
             li
-              a.navLink#mapLink(href="#", onclick="return false") Map
-            li.divider
+              a.navLink#mapLink(href="#", onclick="return false") Find Us
 
     .row.fullWidth#intro
       .small-12.columns
         #logoContainer
           img#mainLogo(src="./img/BannerLogo.png")
-        h5#introAddress 142 Belle Forest Circle Nashville TN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        h5#introPhoneNumber (615)-997-3735
+        #introText
+          h5 142 Belle Forest Circle Nashville TN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          h5 (615)-997-3735
 
     .row.fullWidth#about
       .small-12.columns
-        img.sectionHeader(src="./img/About.png")
+        img.sectionHeader(src="./img/story.png")
         .row
           .small-12.large-6.columns
             #aboutImage1
-              img.th(src="http://placehold.it/400x300")
+              img.th(src="./img/bar2.jpg")
             #aboutImage2
-              img.th.hide-for-small(src="http://placehold.it/400x300")
-          .small-12.large-6.columns      
-            p.aboutText1
-              | I came back to Nashville in early 2009 to take care of my father, who was ill. I had recently sold a financial services business in Chicago and was able to do this whereas my two older sisters had busy working lives and were not. After about three months in Nashville, I decided “why not stay here?” I had lived here in the 80’s, hada great group of friends that I had kept in touch with over the years, and Nashville had grown up into a truly vibrant, cultural city. I decided to focus on a long-held dream of owning a bar and grill. I had paid my dues in my teens and twenties in all aspects of the hospitality business, both in Nashville and Chicago, so it wasn’t like I was going in cold.            
-            p.aboutText2
-              | As fate would have it, I wandered in to The Bellevue Pub in late 2009. I learned from several regulars there that this place had once been a great neighborhood gathering place going back 25 years, but over the last 6 years had gone severely downhill due primarily to absentee ownership. They longed to have it back! After four years of unsuccessfully trying to negotiate with two failing owners, the bar finally closed in November of 2013, and I immediately stepped in. Ironically, I had also met the love of my life, Angie, at The Bellevue Pub in October 2009. She was bartending there to make ends meet as a realtor during that terrible time in the market. We have been together ever since, and have pursued this dream together.
-            p.aboutText3
-              | Our goal was to completely revitalize the once-great Bellevue Pub and bring it back to the community. We realized that it had developed a very negative stigma over recent years, so the decision was made to shut it down, completely remodel it, and re-open it under a new name. We both love the school “vibe” and wanted to bring this type of music together with great food and a clean, crisp, female-friendly atmosphere. After much deliberating, Angie hit on a name that rang true to both of us immediately. Throwbacks Bar & Grill was born! We hope you visit us soon and regularly to meet our friendly staff, enjoy great food & drink, live music on our full stage, karaoke, our old-school shuffleboard table, real dart boards, our daily specials, and more!!
+              img.th.hide-for-small(src="./img/sBoard.jpg")
+            .hoursContainer.hide-for-small
+              img(src="./img/hours.jpg")
+              
+              
+          .small-12.large-5.columns.end      
+            p#aboutText1
+              | I was thrown back, as it were, into Nashville in 2009. I'm Steve Gehlman and though I came to care for my father after selling a financial services business in Chicago, I had a such a fantastic group of friends from back in the 80s that it only took 3 months to begin asking "why not stay here."  Nashville had grown up into a truly vibrant, cultural city.
 
+
+            p#aboutText2
+              | Fate rewarded me and sealed the deal when I met the the love of my life, Angie, at the Bellevue Pub later that year. Like everyone coping with the terrible time in the markets, she was bartending there part time to make ends meet as a realtor. Even the regulars harkened back to better times with stories of how the pub had been a great neighborhood gathering place going back 25 years. 
+              img.th#aboutImage3(src="../img/sign2.jpg")
+              | Everyone longed to have it back. In my teens and twenties I'd paid my dues working in all aspects of the hospitality business. So when I stepped in with the long-held dream of owning a bar and grill, it wasn't like I was going in cold.
+            
+            p#aboutText3
+              | Angie and I took on the goal of completely remodeling, revitalizing and rebranding the pub with a crisp character and back to the future feel. Keep the old school vibe, we thought, and the great music that's rocked the test of time. Unplug social networking back to where it once belonged. 
+            
+              | Bring back a buoyant, female-friendly space framed with real dart boards, a classic shuffleboard table, serious live music staging, and karaoke nights - all punctuated with great beer, spirits, and superb food done right.
+            p#aboutText4
+              | The name hit Angie in an inspired flash, <em>Throwbacks</em>. And here we are. We're a place to meet your friends and make some more. Come and meet our friendly staff, enjoy great food & drink, daily specials and get back to where you once belonged.
+            .hoursContainer.hide-for-medium-up
+              img(src="./img/hours.jpg")
     .row.fullWidth#menu
       .small-12.columns
-        img.sectionHeader(src="./img/Menu.png")
+        img.sectionHeader(src="./img/eats.png")
         .row
-          .small-12.medium-6.large-4.large-offset-2.columns
+          .small-12.large-9.large-offset-2.columns.end
+            img.th#menuImage1(src="./img/burger.jpg")
+            img.th#menuImage2(src="./img/bar.jpg")
+            img.th#menuImage3(src="./img/philly.jpg")
+          .small-12.medium-6.large-4.large-offset-3.columns
             #appetizers
-              h3 Appetizers
-              
+              img.menuHeading(src="./img/appetizers.png")
               .menu-entry
                 h4.title Buffalo Chicken Wings (8)
                 p.description With ranch dressing on the side
@@ -119,7 +131,7 @@ html(class="no-js" lang="en")
                 p.price $6.00                                                                                               
             
             #salads
-              h3 Salads
+              img.menuHeading(src="./img/salads.png")
 
               .menu-entry
                 h4.title Throwbacks Salad
@@ -136,14 +148,14 @@ html(class="no-js" lang="en")
                   | Ranch, honey mustard, Italian, Blue Cheese, Caesar
                 p
                   | Add Fried or Grilled Chicken for $2.00
-
+          .small-12.hide-for-medium-up.columns
+            img.th(src="./img/philly.jpg")
           .small-12.medium-6.large-4.columns
             #sandwiches
-              h3 Sandwiches And Stuff
-              
+              img.menuHeading(src="./img/sandwichesNstuff.png")
               .menu-entry
                 h4.title Throwbacks Burger
-                p.description 1/3 lb. Retro goodness with cheddar, american, swiss, pepperjack or provalone $.50
+                p.description 1/3 lb. Retro goodness with cheddar, american, swiss, pepperjack or provolone $.50
                 p.price $8.00
 
               .menu-entry
@@ -201,21 +213,34 @@ html(class="no-js" lang="en")
                 p.description On toasted bun with side of honey mustard, lettuce tomato & onion
                 p.price $7.00
 
-          .large-2.hide-for-small.hide-for-medium.columns
+          .large-1.hide-for-small.hide-for-medium.columns
 
     .row.fullWidth#calendar
       .small-12.columns
-        img.sectionHeader(src="./img/Calendar.png")
-      
-
-        
+        img.sectionHeader(src="./img/dates.png")
+      .row.collapse    
+        .small-12.medium-6.large-3.large-offset-4.columns
+          h2 Weekly Specials
+          h4.specialText Sunday
+          h4.specialText Monday
+          h4.specialText Tuesday
+          h4.specialText Wednesday
+          h4.specialText Thursday
+          h4.specialText Friday
+          h4.specialText Saturday
+        .small-12.medium-6.columns.large-4.columns.end#orbitAttach
+          ul#orbitSlider(data-orbit)
+            
     .row.fullWidth#map
       .small-12.columns
-        img.sectionHeader(src="./img/Map.png")
-        .row
-          .small-12.medium-8.medium-centered.columns
-            iframe#googleMap(width="100%", height="400px", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnjbH3hVnKXa8oiBIVQw5ONWs-WY0RBpU&q=142+Belle+Forest+Circle,Nashville+TN")
-             
+        img.sectionHeader(src="./img/findUs.png")
+      .row.collapse
+        .small-12.large-3.large-offset-2.columns
+          h2 Title
+          p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi iste quia cum esse sapiente ipsum omnis, temporibus quaerat soluta, exercitationem animi consectetur culpa quod impedit perspiciatis voluptatibus similique cumque dignissimos.
+        .small-12.large-6.columns.end
+          iframe#googleMap(width="100%", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnjbH3hVnKXa8oiBIVQw5ONWs-WY0RBpU&q=142+Belle+Forest+Circle,Nashville+TN")
+          
 
     script(src="bower_components/jquery/dist/jquery.min.js")
     script(src="bower_components/foundation/js/foundation.min.js")
