@@ -338,6 +338,9 @@ p{
 
 		}
 		img{
+			@media #{$small-only} {}
+			@media #{$medium-only} {}
+
 			width: 100%;
 			height: auto;
 		}
@@ -350,7 +353,7 @@ p{
 		padding: 4%;
 
 	}
-	h2{
+	h3{
 		padding: 4%;
 	}
 	#googleMap{
