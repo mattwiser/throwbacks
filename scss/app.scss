@@ -298,16 +298,29 @@ p{
 }
 
 #calendar{
+	
+	@media #{$medium-only}{
+		padding-right: 10%;
+		padding-left: 10%;
+	}
 	h2{
 		display: block;
 		text-align: center;
-		border-bottom: 2px solid white;
-		margin-right: 3%; 
+		text-decoration: underline;
+		 
 	}
 	.specialText{
 		display: block;
 		text-align: center;
 		text-decoration: underline;
+
+	}
+	p{
+		text-align: center !important;
+		color: white;
+		@media #{$large-up}{
+			padding-left: 6px;
+		}
 
 	}
 	.calendarTitle{
@@ -317,8 +330,12 @@ p{
 		padding-left: 2%;
 	}
 	#orbitSlider{
+		@media #{$medium-only} {
+			margin-top: 5%;
+		}
 		@media #{$medium-up} {
 			// margin-bottom: 2%;
+
 		}
 		img{
 			width: 100%;
@@ -331,6 +348,7 @@ p{
 	p{
 		color: white;
 		padding: 4%;
+
 	}
 	h2{
 		padding: 4%;
