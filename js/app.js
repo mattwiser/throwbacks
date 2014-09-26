@@ -42,23 +42,50 @@ function getCalendar() {
 
 function htmlAddCalendar(ajaxResponse){
   var dates = ajaxResponse.items;
-  // console.log(ajaxResponse);
+  // console.log(ajaxResponse.items);
   // console.log(" ");
   var $orbitSlider = $("#orbitSlider");
   var baseDates = [];
   var baseDescriptions = [];
+  var dateComparison = [];
 
   for (var i = dates.length - 1; i >= 0; i--) {
-    if (dates[i].recurrence) {
-      baseDates.push(dates[i].summary);
-      baseDescriptions.push(dates[i].description);
-    };
+    if (dates[i].start) {
+      if (dates[i].start.date) {
+        
+        console.log("all day event detected");
+        console.log(dates[i].summary);
+        console.log(dates[i].start.date);
+        console.log(" ");
+        dateComparison.push(dates[i].start.date);
+
+      } else if (dates[i].start.dateTime) {
+        
+        console.log("timed event detected");
+        console.log(dates[i].summary);
+        console.log(dates[i].start.dateTime);
+        console.log(" ");
+        dateComparison.push(dates[i].start.dateTime);
+
+      } else{
+        
+        console.log(" event without start detected");
+      } 
+    } else {
+      console.log(" ")
+      console.log("WTF IS THIS?");
+      console.log(dates[i]);
+    }
   };
 
-  console.log(dates.length)  
   for (var i = dates.length - 1; i >= 0; i--) {
     if (dates[i].status==="confirmed") {
-        
+      // console.log(dates[i].summary);
+      // console.log(dates[i].start.dateTime);
+      // console.log(dates[i].start.date);
+      // console.log(dates[i]);
+      // console.log(" ");
+
       var captionTitle = dates[i].summary;
       var captionText = dates[i].description;
       
@@ -71,14 +98,14 @@ function htmlAddCalendar(ajaxResponse){
 
 
       if (containsDescription && containsTitle && !dates[i].recurrence) {
-        console.log("Date Match Failure Conditions met!!!!!");
-        console.log(dates[i]);
-        console.log(" ");
+        // console.log("Date Match Failure Conditions met!!!!!");
+        // console.log(dates[i]);
+        // console.log(" ");
 
       } else {
-          console.log("Date Posting Conditions Met!!!!");
-          console.log(dates[i]);
-          console.log(" ");
+          // console.log("Date Posting Conditions Met!!!!");
+          // console.log(dates[i]);
+          // console.log(" ");
           if (captionTitle === "NFL Sunday Ticket") {        
             $img.attr('src', './img/sundayTicket.jpg');
           }
@@ -111,13 +138,9 @@ function htmlAddCalendar(ajaxResponse){
           $li.append($img);
           $li.append($orbitTitle);
           $li.append($orbitCaption);
-          $orbitSlider.append($li);        
-      }
-      
-      
-      
-
-   
+          $orbitSlider.append($li); 
+          console.log(dateComparison.sort());       
+      }  
     };
   };
 }
