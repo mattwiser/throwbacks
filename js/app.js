@@ -31,7 +31,7 @@ function getCalendar() {
       url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid+ '/events?timeMax='+ maxDate  + '&key=' + mykey),
       dataType: 'json',
       success: function (response) {
-        htmlAddCalendar(response);
+        sortCalendarDates(response);
       },
       error: function (response) {
         console.log('ERROR');
@@ -40,31 +40,27 @@ function getCalendar() {
   });
 }
 
-function htmlAddCalendar(ajaxResponse){
+
+function sortCalendarDates(ajaxResponse){
   var dates = ajaxResponse.items;
-  // console.log(ajaxResponse.items);
-  // console.log(" ");
-  var $orbitSlider = $("#orbitSlider");
-  var baseDates = [];
-  var baseDescriptions = [];
   var dateComparison = [];
 
   for (var i = dates.length - 1; i >= 0; i--) {
     if (dates[i].start) {
       if (dates[i].start.date) {
         
-        console.log("all day event detected");
-        console.log(dates[i].summary);
-        console.log(dates[i].start.date);
-        console.log(" ");
+        // console.log("all day event detected");
+        // console.log(dates[i].summary);
+        // console.log(dates[i].start.date);
+        // console.log(" ");
         dateComparison.push(dates[i].start.date);
 
       } else if (dates[i].start.dateTime) {
         
-        console.log("timed event detected");
-        console.log(dates[i].summary);
-        console.log(dates[i].start.dateTime);
-        console.log(" ");
+        // console.log("timed event detected");
+        // console.log(dates[i].summary);
+        // console.log(dates[i].start.dateTime);
+        // console.log(" ");
         dateComparison.push(dates[i].start.dateTime);
 
       } else{
@@ -72,11 +68,23 @@ function htmlAddCalendar(ajaxResponse){
         console.log(" event without start detected");
       } 
     } else {
-      console.log(" ")
-      console.log("WTF IS THIS?");
-      console.log(dates[i]);
+      console.log("canceled event detected");
     }
   };
+
+  console.log(dateComparison.sort()); 
+  _.sortBy(dates)
+  htmlAddCalendar(dates);
+}
+
+
+function htmlAddCalendar(dates){
+
+  // console.log(ajaxResponse.items);
+  // console.log(" ");
+  var $orbitSlider = $("#orbitSlider");
+  var baseDates = [];
+  var baseDescriptions = [];
 
   for (var i = dates.length - 1; i >= 0; i--) {
     if (dates[i].status==="confirmed") {
@@ -95,6 +103,8 @@ function htmlAddCalendar(ajaxResponse){
       var $orbitCaption = $("<p>");
       var $orbitTitle = $("<h4>");
       var $img = $("<img>");
+      var $date = $("<h6>");
+      $date.attr("class", "calendarDate");
 
 
       if (containsDescription && containsTitle && !dates[i].recurrence) {
@@ -108,24 +118,34 @@ function htmlAddCalendar(ajaxResponse){
           // console.log(" ");
           if (captionTitle === "NFL Sunday Ticket") {        
             $img.attr('src', './img/sundayTicket.jpg');
+            $date.text("Sun 09/28");
           }
           else if (captionTitle === "Karaoke Wednesday") {
             $img.attr('src', './img/karaoke.jpg');
+            $date.text("Wed 10/1");
           }
           else if (captionTitle === "Open Jam") {
 
             $img.attr('src', './img/openMic.jpg');
+            $date.text("Fri 10/3");
           }
           else if (captionTitle === "Throwback Thursday") {
 
             $img.attr('src', './img/triviaThurs.jpg');
+            $date.text("Thurs 10/02");
           }   
           else if (captionTitle === "Live Music at 9") {
 
             $img.attr('src', './img/liveSat.jpg');
+            $date.text("Sat 10/4");
           }    
+          else if(captionTitle === "Gary Talley Live at 9"){
+            $img.attr('src', './img/liveSat.jpg');
+            $date.text("Sat 09/27");
+          }
           else {
             $img.attr('src', './img/specialEvent.jpg');
+            
           }                     
           
           // $orbitCaption.attr('class', 'orbit-caption');
@@ -137,9 +157,9 @@ function htmlAddCalendar(ajaxResponse){
           
           $li.append($img);
           $li.append($orbitTitle);
+          $li.append($date);
           $li.append($orbitCaption);
-          $orbitSlider.append($li); 
-          console.log(dateComparison.sort());       
+          $orbitSlider.append($li);       
       }  
     };
   };

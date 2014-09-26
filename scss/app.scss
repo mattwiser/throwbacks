@@ -84,7 +84,10 @@ p{
 	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover;
-	
+	#introSlogan{
+		display: block;
+		text-align: center;
+	}
 	#introText{
 		padding-top: 34vh;
 		h5{
@@ -323,11 +326,14 @@ p{
 		}
 
 	}
-	.calendarTitle{
+	.calendarTitle, .calendarDate{
 		background-color: $oil;
 		display: block;
 		margin: 0;
 		padding-left: 2%;
+	}
+	.calendarDate{
+		padding-top: 0.5%;
 	}
 	#orbitSlider{
 		@media #{$medium-only} {
@@ -354,7 +360,6 @@ p{
 		font-family: Oswald;
 		text-decoration: none;
 		margin: 0;
-		padding: 0;
 	}
 	h5:nth-of-type(2){
 		margin: 0;
@@ -372,7 +377,7 @@ p{
 	h6{
 		display: block;
 		text-align: center;
-		// font-family: lato, sans-serif;
+		font-family: lato, sans-serif;
 		margin-top: 0;
 		padding: 0
 	}
