@@ -36,9 +36,12 @@ p{
 	max-width: initial;
 }
 .panel{
-	background-color: #899395;
+	background-color: rgba(89, 27, 11, 0.75);
 	color: white;
-	border-color:  #899395;
+	border-color:  rgba(89, 27, 11, 0.75);
+	p{
+		opacity: 1;
+	}
 }
 #about{
 	background-color: #f7ebbb;
@@ -80,7 +83,7 @@ p{
 
 #intro{
 	position: relative !important;
-	background-image:url(../img/Banner1.jpg);
+	background-image:url(../img/Banner2.jpg);
 	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover;
@@ -321,7 +324,7 @@ p{
 		text-decoration: underline;
 
 	}
-	p{
+	.weeklyDescription{
 		text-align: center !important;
 		color: white;
 		@media #{$large-up}{
