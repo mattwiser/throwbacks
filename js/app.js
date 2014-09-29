@@ -134,8 +134,8 @@ function htmlAddCalendar(dates){
 
       $img.attr('src', './img/liveSat.jpg');
     }    
-    else if(captionTitle === "Gary Talley Live at 9"){
-      $img.attr('src', './img/liveSat.jpg');
+    else if(captionTitle === "Poker Monday"){
+      $img.attr('src', './img/pokerMonday.jpg');
     }
     else {
       $img.attr('src', './img/specialEvent.jpg');
