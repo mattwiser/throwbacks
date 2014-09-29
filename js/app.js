@@ -24,12 +24,14 @@ function getCalendar() {
   var calendarid = 'qlrklr4bh0rh2gf4k5td996e6c@group.calendar.google.com';
 
   var maxDate = new Date();
+  var minDate = new Date();
+  minDate = minDate.toISOString();
   maxDate.setDate(maxDate.getDate()+7);  
   maxDate = maxDate.toISOString();
 
   $.ajax({
       type: 'GET',
-      url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid+ '/events?timeMax='+ maxDate  + '&key=' + mykey),
+      url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid+ '/events?timeMin=' + minDate + '&timeMax='+ maxDate  + '&key=' + mykey),
       dataType: 'json',
       success: function (response) {
         receiveCalendarEvents(response);
