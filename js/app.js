@@ -25,16 +25,22 @@ function getCalendar() {
 
   var maxDate = new Date();
   var minDate = new Date();
+
   minDate = minDate.toISOString();
-  maxDate.setDate(maxDate.getDate()+7);  
+  console.log(maxDate);
+  maxDate.setDate(maxDate.getDate()+6);  
+  console.log(maxDate);
   maxDate = maxDate.toISOString();
+  console.log(maxDate);
 
   $.ajax({
       type: 'GET',
-      url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid+ '/events?timeMin=' + minDate + '&timeMax='+ maxDate  + '&key=' + mykey),
+      url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid+ '/events?orderBy=startTime&singleEvents=true&timeMin=' + minDate + '&timeMax='+ maxDate  + '&key=' + mykey),
       dataType: 'json',
       success: function (response) {
+        console.log(response);
         receiveCalendarEvents(response);
+
       },
       error: function (response) {
         console.log('ERROR');
@@ -47,46 +53,27 @@ function getCalendar() {
 function receiveCalendarEvents(ajaxResponse){
   var events = ajaxResponse.items;
   var eventArray = [];
-  var eventDates = [];
   for (var i = events.length - 1; i >= 0; i--) {
     
-    if (events[i].start.date && events[i].status === "confirmed") {    
-    
-      events[i].date = events[i].start.date;
-      eventArray.push(events[i]);
-      eventDates.push(events[i].date);
-
-    
-    } else if (events[i].start.dateTime && events[i].status === "confirmed") {
+    if (events[i].status != "cancelled") {
+      if (events[i].start.date && events[i].status === "confirmed") {    
       
-      events[i].date = events[i].start.dateTime;
-      eventArray.push(events[i]);
-      eventDates.push(events[i].date);
-      console.log(events[i].start.dateTime);
-    
-    } else {
-      console.log("idk wtf this is");
-    }
-  }
-  
-  eventDates = eventDates.sort();
-  sortEvents(eventDates, eventArray);
-}
+        events[i].date = events[i].start.date;
+        eventArray.push(events[i]);
 
-function sortEvents(dateArray, eventArray){
-  var sortedEvents = [];
-  
-  for (var i = dateArray.length - 1; i >= 0; i--) {
-
-    for (var x = eventArray.length - 1; x >= 0; x--) {
-
-      if (eventArray[x].date === dateArray[i]) {
-        sortedEvents.push(eventArray[x]);
-
+      
+      } else if (events[i].start.dateTime && events[i].status === "confirmed") {
+        
+        events[i].date = events[i].start.dateTime;
+        eventArray.push(events[i]);
+        
+      
+      } else {
+        console.log("idk wtf this is");
       }
     }
-  }
-  manipulateEventDates(sortedEvents);
+      };  
+  manipulateEventDates(eventArray);
 }
 
 
@@ -98,6 +85,7 @@ function manipulateEventDates(events){
   }
   htmlAddCalendar(events);
 }
+
 
 function htmlAddCalendar(dates){
 
@@ -128,7 +116,7 @@ function htmlAddCalendar(dates){
     }
     else if (captionTitle === "Trivia Sunday") {
 
-      $img.attr('src', './img/triviaThurs.jpg');
+      $img.attr('src', './img/triviaSun.jpg');
     }   
     else if (captionTitle === "Live Music at 9") {
 

@@ -91,6 +91,15 @@ p{
 		display: block;
 		text-align: center;
 	}
+	#introHeader{
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 2.75%;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
 	#introText{
 		padding-top: 34vh;
 		h5{
@@ -312,6 +321,12 @@ p{
 		padding-right: 10%;
 		padding-left: 10%;
 	}
+	h5{
+		
+		text-align: center;
+		display: block;
+		// margin-bottom: 5%;
+	}
 	h2{
 		display: block;
 		text-align: center;
@@ -344,7 +359,7 @@ p{
 	#orbitSlider{
 		@media #{$medium-only} {
 			margin-top: 5%;
-		}
+		}r
 		@media #{$medium-up} {
 			// margin-bottom: 2%;
 
