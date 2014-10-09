@@ -6,7 +6,7 @@ $(document).foundation({
     animation: 'fade',
     timer_speed: 20000,
     variable_height: true,
-    slide_number: true,
+    slide_number: false,
     bullets: false
   }
 });
@@ -28,7 +28,7 @@ function getCalendar() {
 
   minDate = minDate.toISOString();
   console.log(maxDate);
-  maxDate.setDate(maxDate.getDate()+8);  
+  maxDate.setDate(maxDate.getDate()+6);  
   console.log(maxDate);
   maxDate = maxDate.toISOString();
   console.log(maxDate);
