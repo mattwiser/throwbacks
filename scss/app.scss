@@ -69,8 +69,18 @@ p{
 	background-size: cover;
 }
 
+// #map{
+// 	background-image:url(../img/map.jpg);
+// 	/* fix background */
+// 	background-attachment: fixed;
+// 	center it
+// 	background-position: center center;
+// 	/* Scale it nicely to the element  */
+// 	background-size: cover;
+// }
+
 #map{
-	background-color: #575e4a;
+	background-color: #444344;
 }
 
 
@@ -95,6 +105,9 @@ p{
 		width: 90%;
 		margin: 0 auto;
 		padding-top: 2.75%;
+		@media #{$large-up} {
+			width: 70%;
+		}
 		img{
 			width: 100%;
 			height: auto;
@@ -218,6 +231,14 @@ p{
 		img{
 			width: 100%;
 			height: auto;
+		}
+	}
+	.socialContainer{
+		text-align: center;
+		img{
+			width: 32px;
+			height: auto;
+			max-width: 32px;
 		}
 	}
 	.hoursContainer{
@@ -359,7 +380,7 @@ p{
 	#orbitSlider{
 		@media #{$medium-only} {
 			margin-top: 5%;
-		}r
+		}
 		@media #{$medium-up} {
 			// margin-bottom: 2%;
 

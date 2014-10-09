@@ -4,9 +4,9 @@ $(document).foundation({
   },
   orbit: {
     animation: 'fade',
-    timer_speed: 10000,
+    timer_speed: 20000,
     variable_height: true,
-    slide_number: false,
+    slide_number: true,
     bullets: false
   }
 });
@@ -28,7 +28,7 @@ function getCalendar() {
 
   minDate = minDate.toISOString();
   console.log(maxDate);
-  maxDate.setDate(maxDate.getDate()+6);  
+  maxDate.setDate(maxDate.getDate()+8);  
   console.log(maxDate);
   maxDate = maxDate.toISOString();
   console.log(maxDate);
@@ -110,6 +110,9 @@ function htmlAddCalendar(dates){
     else if (captionTitle === "Karaoke Wednesday") {
       $img.attr('src', './img/karaoke.jpg');
     }
+    else if (captionTitle === "Saturday Night NCAA") {
+      $img.attr('src', './img/satFootball.jpg');
+    }    
     else if (captionTitle === "Open Jam") {
 
       $img.attr('src', './img/openMic.jpg');
@@ -173,5 +176,5 @@ function scrollTop(event){
 function htmlScrollAnimation(section){
   $('html, body').animate({
     scrollTop: $(section).offset().top - 45
-  }, 1000);
+  }, 800);
 }
