@@ -13,11 +13,29 @@ $(document).foundation({
 
 $(document).ready(function() {
    getCalendar();
+   ajaxQuery();
    $('.navLink').on('click', function (event){
       scrollTop(event);
    });
 });
 
+
+function ajaxQuery(){
+  var mykey = 'AIzaSyAnjbH3hVnKXa8oiBIVQw5ONWs-WY0RBpU';  
+  $.ajax({
+    type: 'GET',
+    url: encodeURI('https://www.googleapis.com/calendar/v3/colors?key=' + mykey),
+    dataType: 'json',
+    success: function (response){
+      console.log("SUCCESS");
+      console.log(response);
+    },
+    error: function (response){
+      console.log("fAILURE");
+      console.log(response);
+    }
+  });
+}
 
 function getCalendar() {
   var mykey = 'AIzaSyAnjbH3hVnKXa8oiBIVQw5ONWs-WY0RBpU';
@@ -54,7 +72,7 @@ function receiveCalendarEvents(ajaxResponse){
   var events = ajaxResponse.items;
   var eventArray = [];
   for (var i = events.length - 1; i >= 0; i--) {
-    
+    console.log(events[i].colorId);
     if (events[i].status != "cancelled") {
       if (events[i].start.date && events[i].status === "confirmed") {    
       
