@@ -94,8 +94,8 @@ p{
 #intro{
 	position: relative !important;
 	background-image:url(../img/Banner2.jpg);
-	background-attachment: fixed;
-	background-position: center center;
+	background-attachment: scroll;
+	background-position: left top;
 	background-size: cover;
 	#introSlogan{
 		display: block;
